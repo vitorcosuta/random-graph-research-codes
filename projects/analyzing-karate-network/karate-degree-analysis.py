@@ -21,5 +21,17 @@ nx.draw_networkx_edges(karate, pos, ax=ax0, alpha=0.4)
 ax0.set_title("Componetes conectados de Karate")
 ax0.set_axis_off()
 
+ax1 = fig.add_subplot(axgrid[3:, :1])
+ax1.plot(degree_sequence, "b-", marker="o")
+ax1.set_title("Ranque dos graus")
+ax1.set_ylabel("Grau")
+ax1.set_xlabel("Ranque")
+
+ax2 = fig.add_subplot(axgrid[3:, 2:])
+ax2.bar(*np.unique(degree_sequence, return_counts=True))
+ax2.set_title("Histograma dos graus")
+ax2.set_xlabel("Grau")
+ax2.set_ylabel("# de Nodos")
+
 fig.tight_layout()
 plt.show()
