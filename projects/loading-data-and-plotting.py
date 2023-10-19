@@ -3,6 +3,14 @@
 
 from scipy.io import mmread
 import networkx as nx
-a = mmread('../Network-Repository/karate/soc-karate.mtx')
+
+a = mmread('../network-repository/karate/soc-karate.mtx')
 my_graph = nx.Graph(a)
 
+# Importando a biblioteca matplot para plotar o grafo
+
+import matplotlib.pyplot as plt
+
+nx.draw(my_graph)
+plt.draw()
+plt.show()
